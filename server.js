@@ -37,15 +37,23 @@ function startServer() {
     app.use(express.static(PUBLIC_DIR));
 
     app.get('*', (req, res) => {
+      // Don't serve index.html for missing static assets
+      if (path.extname(req.path)) {
+        return res.status(404).send('Asset not found');
+      }
       res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
     });
 
-    app.listen(PORT, () => {
-      console.log(`\n======================================================`);
-      console.log(`  ✨ DREAMY MIDNIGHT BIRTHDAY - MUNIZA SHAHEEN ✨`);
-      console.log(`  Local server running at: http://localhost:${PORT}`);
-      console.log(`======================================================\n`);
-    });
+    if (require.main === module) {
+      app.listen(PORT, () => {
+        console.log(`\n======================================================`);
+        console.log(`  ✨ DREAMY MIDNIGHT BIRTHDAY - MUNIZA SHAHEEN ✨`);
+        console.log(`  Local server running at: http://localhost:${PORT}`);
+        console.log(`======================================================\n`);
+      });
+    }
+
+    module.exports = app;
   } catch (err) {
     // Built-in HTTP server fallback (zero external dependencies required)
     const server = http.createServer((req, res) => {

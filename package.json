@@ -4,6 +4,7 @@
   "description": "A premium, full-screen interactive birthday celebration web application for Muniza Shaheen",
   "main": "server.js",
   "scripts": {
+    "build": "node generate-assets.js",
     "start": "node server.js",
     "dev": "node server.js"
   },
