@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Muniza Shaheen ✨ Dreamy Midnight Celebration</title>
+  <meta name="description" content="A magical, interactive midnight birthday celebration for Muniza Shaheen.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Cinzel Decorative, Poppins & Great Vibes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="opening-active">
+
+  <!-- Full-Screen Interactive Sky Canvas (Stars, Shooting Stars, Particles) -->
+  <canvas id="sky-canvas"></canvas>
+
+  <!-- Ambient Crescent Moon -->
+  <div class="crescent-moon" id="crescentMoon" aria-hidden="true">
+    <div class="moon-body"></div>
+    <div class="moon-glow"></div>
+    <div class="moon-sparkle s1">✦</div>
+    <div class="moon-sparkle s2">✧</div>
+  </div>
+
+  <!-- Ambient Music Player (Floating Controller) -->
+  <div class="audio-control-container" id="audioContainer">
+    <button class="music-toggle-btn" id="musicToggleBtn" aria-label="Toggle background music" title="Play Dreamy Birthday Music">
+      <div class="music-icon-wrapper">
+        <span class="music-note" id="musicNoteIcon">♪</span>
+        <div class="sound-bars" id="soundBars">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <span class="music-tooltip" id="musicTooltip">Play Music</span>
+    </button>
+    <audio id="bgAudio" loop preload="auto">
+      <source src="assets/music/birthday.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Minimal Floating Navigation Bar -->
+  <nav class="floating-nav" id="floatingNav" aria-label="Main Navigation">
+    <div class="nav-brand">
+      <span class="brand-sparkle">✨</span>
+      <span class="brand-name">Muniza</span>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#age-section" class="nav-link">Age</a></li>
+      <li><a href="#countdown-section" class="nav-link">Countdown</a></li>
+      <li><a href="#message-section" class="nav-link">Message</a></li>
+      <li><a href="#gallery-section" class="nav-link">Memories</a></li>
+      <li><a href="#timeline-section" class="nav-link">Moments</a></li>
+      <li><a href="#wishes-section" class="nav-link">Make a Wish</a></li>
+      <li><a href="#closing-section" class="nav-link">Surprise</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========================================================= -->
+  <!-- SCREEN 1: FULL-SCREEN OPENING SURPRISE SCENE             -->
+  <!-- ========================================================= -->
+  <section class="opening-screen" id="openingScreen">
+    <div class="opening-content-wrapper">
+      
+      <!-- Top Title -->
+      <div class="opening-header">
+        <span class="header-pretitle glow-text-subtle">A SPECIAL DAY FOR</span>
+      </div>
+
+      <!-- 3D Gift Box Stage -->
+      <div class="gift-stage" id="giftStage">
+        <div class="magical-burst-rays" id="burstRays"></div>
+        <div class="magical-halo" id="boxHalo"></div>
+
+        <!-- 3D Gift Box -->
+        <div class="gift-box" id="giftBox">
+          <!-- Lid with 3D Bow & Ribbon -->
+          <div class="gift-lid" id="giftLid">
+            <div class="lid-top">
+              <div class="lid-ribbon-horizontal"></div>
+              <div class="lid-ribbon-vertical"></div>
+              
+              <!-- 3D Ribbon Bow -->
+              <div class="ribbon-bow">
+                <div class="bow-loop bow-left"></div>
+                <div class="bow-loop bow-right"></div>
+                <div class="bow-knot"></div>
+                <div class="bow-tail tail-left"></div>
+                <div class="bow-tail tail-right"></div>
+              </div>
+            </div>
+            <div class="lid-lip lid-lip-front"></div>
+            <div class="lid-lip lid-lip-back"></div>
+            <div class="lid-lip lid-lip-left"></div>
+            <div class="lid-lip lid-lip-right"></div>
+          </div>
+
+          <!-- Box Body with Satin Ribbons -->
+          <div class="gift-body">
+            <div class="box-face box-front">
+              <div class="body-ribbon-v"></div>
+            </div>
+            <div class="box-face box-back">
+              <div class="body-ribbon-v"></div>
+            </div>
+            <div class="box-face box-left">
+              <div class="body-ribbon-v"></div>
+            </div>
+            <div class="box-face box-right">
+              <div class="body-ribbon-v"></div>
+            </div>
+            <div class="box-face box-bottom"></div>
+            <div class="box-interior-light" id="boxInteriorLight"></div>
+          </div>
+
+          <!-- The Rising Birthday Invitation / Card (Cinematic Reveal) -->
+          <div class="rising-card" id="risingCard">
+            <div class="rising-card-inner">
+              <span class="card-mini-sparkle">✨</span>
+              <p class="card-mini-tag">DREAMY MIDNIGHT</p>
+              <h2 class="card-mini-title">Muniza Shaheen</h2>
+              <p class="card-mini-subtitle">Your celebration awaits...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Titles & Interactive Button -->
+      <div class="opening-footer">
+        <h1 class="birthday-girl-title glow-title">MUNIZA SHAHEEN</h1>
+        <p class="birth-date-badge">
+          <span class="badge-dot">✦</span>
+          <span class="badge-text" id="configDateDisplay">24 NOVEMBER 2006</span>
+          <span class="badge-dot">✦</span>
+        </p>
+
+        <button class="open-surprise-btn" id="openSurpriseBtn">
+          <span class="btn-sparkle-left">✨</span>
+          <span class="btn-text">🎁 OPEN YOUR SURPRISE</span>
+          <span class="btn-sparkle-right">✨</span>
+          <div class="btn-glow-layer"></div>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- SCREEN 2: MAIN FULL-SCREEN BIRTHDAY EXPERIENCE           -->
+  <!-- ========================================================= -->
+  <main class="main-experience" id="mainExperience">
+
+    <!-- 1. HERO SECTION -->
+    <section class="section hero-section" id="hero">
+      <div class="section-container hero-container">
+        
+        <div class="hero-sparkle-pill animate-fade-in">
+          <span class="pill-star">✨</span>
+          <span>TODAY IS ALL ABOUT YOU</span>
+          <span class="pill-star">✨</span>
+        </div>
+
+        <h2 class="hero-h2 animate-slide-up">HAPPY BIRTHDAY</h2>
+        <h1 class="hero-h1 glow-hero-name animate-slide-up-delay" id="heroName">MUNIZA SHAHEEN</h1>
+        
+        <div class="hero-date-wrapper animate-slide-up-delay-2">
+          <span class="hero-date-line"></span>
+          <span class="hero-date" id="heroDate">24 NOVEMBER 2006</span>
+          <span class="hero-date-line"></span>
+        </div>
+
+        <p class="hero-quote animate-slide-up-delay-3" id="heroQuote">
+          May your life always be filled with happiness,<br>
+          beautiful memories, endless smiles, and wonderful moments.
+        </p>
+
+        <div class="hero-floating-elements" aria-hidden="true">
+          <span class="float-item f1">💜</span>
+          <span class="float-item f2">✨</span>
+          <span class="float-item f3">🌸</span>
+          <span class="float-item f4">💖</span>
+          <span class="float-item f5">⭐</span>
+          <span class="float-item f6">🌙</span>
+        </div>
+
+        <a href="#age-section" class="scroll-down-indicator" aria-label="Scroll down">
+          <span class="scroll-text">EXPLORE THE CELEBRATION</span>
+          <div class="scroll-arrow">↓</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- 2. BIRTHDAY AGE SECTION -->
+    <section class="section age-section" id="age-section">
+      <div class="section-container">
+        
+        <div class="section-badge">
+          <span>🎂 CELEBRATING LIFE</span>
+        </div>
+
+        <h3 class="section-subtitle">TODAY YOU ARE</h3>
+        
+        <div class="age-display-card glass-panel">
+          <div class="age-counter-wrapper">
+            <span class="age-big-number" id="calculatedAge">18</span>
+            <span class="age-unit">YEARS OF RADIANCE</span>
+          </div>
+
+          <p class="age-description" id="ageSubText">
+            Years of spreading warmth, kindness, and unforgettable laughter to everyone around you.
+          </p>
+
+          <!-- Automatic Life Milestones -->
+          <div class="milestones-grid">
+            <div class="milestone-box">
+              <span class="m-icon">✨</span>
+              <span class="m-number" id="statsDays">6,500+</span>
+              <span class="m-label">Days of Smiles</span>
+            </div>
+            <div class="milestone-box">
+              <span class="m-icon">🌙</span>
+              <span class="m-number" id="statsHours">156,000+</span>
+              <span class="m-label">Hours of Wonder</span>
+            </div>
+            <div class="milestone-box">
+              <span class="m-icon">💜</span>
+              <span class="m-number">Infinite</span>
+              <span class="m-label">Moments of Joy</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. COUNTDOWN SECTION -->
+    <section class="section countdown-section" id="countdown-section">
+      <div class="section-container">
+
+        <div class="section-badge">
+          <span>⏳ THE CELEBRATION CLOCK</span>
+        </div>
+
+        <h2 class="section-title" id="countdownTitle">COUNTDOWN TO YOUR SPECIAL DAY</h2>
+        <p class="section-lead" id="countdownSubtitle">Every passing second brings us closer to celebrating your light.</p>
+
+        <!-- Dynamic Countdown Grid -->
+        <div class="countdown-grid" id="countdownGrid">
+          <div class="countdown-card glass-panel">
+            <div class="count-digit" id="daysCount">00</div>
+            <div class="count-label">DAYS</div>
+            <div class="count-glow"></div>
+          </div>
+          <div class="countdown-divider">:</div>
+          <div class="countdown-card glass-panel">
+            <div class="count-digit" id="hoursCount">00</div>
+            <div class="count-label">HOURS</div>
+            <div class="count-glow"></div>
+          </div>
+          <div class="countdown-divider">:</div>
+          <div class="countdown-card glass-panel">
+            <div class="count-digit" id="minutesCount">00</div>
+            <div class="count-label">MINUTES</div>
+            <div class="count-glow"></div>
+          </div>
+          <div class="countdown-divider">:</div>
+          <div class="countdown-card glass-panel">
+            <div class="count-digit" id="secondsCount">00</div>
+            <div class="count-label">SECONDS</div>
+            <div class="count-glow"></div>
+          </div>
+        </div>
+
+        <!-- Special Banner if Today is Birthday -->
+        <div class="birthday-today-banner" id="birthdayTodayBanner" style="display: none;">
+          <div class="banner-inner glass-panel">
+            <span class="party-popper">🎉</span>
+            <h3 class="banner-headline">IT'S YOUR BIRTHDAY!</h3>
+            <p class="banner-sub">Today the universe celebrates the gift of you. Have the happiest day!</p>
+            <span class="party-popper">🎉</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. BIRTHDAY MESSAGE SECTION -->
+    <section class="section message-section" id="message-section">
+      <div class="section-container">
+
+        <div class="section-badge">
+          <span>💌 FROM THE HEART</span>
+        </div>
+
+        <h2 class="section-title">A LITTLE MESSAGE FOR YOU</h2>
+        <p class="section-lead">Words penned in starlight and wrapped in love.</p>
+
+        <div class="parchment-card glass-panel" id="messageCard">
+          <div class="parchment-decorations">
+            <span class="p-decor top-left">✦</span>
+            <span class="p-decor top-right">✦</span>
+            <span class="p-decor bottom-left">✦</span>
+            <span class="p-decor bottom-right">✦</span>
+          </div>
+
+          <div class="parchment-body">
+            <p class="message-p" id="msgP1">
+              Today is a celebration of you — your smile, your dreams, your journey, and all the beautiful moments still waiting for you.
+            </p>
+            <p class="message-p" id="msgP2">
+              May this new chapter bring you happiness, success, unforgettable memories, and countless reasons to smile.
+            </p>
+            <p class="message-p quote-highlight" id="msgP3">
+              "Keep shining, keep dreaming, and always be yourself."
+            </p>
+          </div>
+
+          <div class="parchment-signature">
+            <span class="signature-tag">With endless admiration & love,</span>
+            <span class="signature-handwritten">Muniza Shaheen's Day 💜</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. MEMORY GALLERY SECTION -->
+    <section class="section gallery-section" id="gallery-section">
+      <div class="section-container">
+
+        <div class="section-badge">
+          <span>✨ CHERISHED MEMORIES</span>
+        </div>
+
+        <h2 class="section-title">MEMORIES</h2>
+        <p class="section-lead">Capturing the radiance, joy, and starlight of every unforgettable chapter.</p>
+
+        <!-- Gallery Grid (Populated dynamically from CONFIG, with fallback) -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Filled dynamically by script.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. SPECIAL MOMENTS TIMELINE SECTION -->
+    <section class="section timeline-section" id="timeline-section">
+      <div class="section-container">
+
+        <div class="section-badge">
+          <span>🌟 YOUR JOURNEY</span>
+        </div>
+
+        <h2 class="section-title">BEAUTIFUL MOMENTS</h2>
+        <p class="section-lead">Every year is a stepping stone of grace, kindness, and blooming dreams.</p>
+
+        <div class="timeline-container" id="timelineContainer">
+          <!-- Populated dynamically from CONFIG -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. WISHES SECTION & INTERACTIVE BIRTHDAY CAKE -->
+    <section class="section wishes-section" id="wishes-section">
+      <div class="section-container">
+
+        <div class="section-badge">
+          <span>🎂 CELESTIAL WISH</span>
+        </div>
+
+        <h2 class="section-title">MAKE A WISH ✨</h2>
+        <p class="section-lead">Close your eyes, think of your sweetest dream, and blow out the candles.</p>
+
+        <!-- 3D Tiered Birthday Cake Stage -->
+        <div class="cake-stage" id="cakeStage">
+          
+          <div class="cake-glow" id="cakeGlow"></div>
+
+          <!-- Tiered Cake Component -->
+          <div class="birthday-cake" id="interactiveCake">
+            <!-- Candles Container -->
+            <div class="candles-wrapper" id="candlesWrapper">
+              <div class="candle" data-candle="1">
+                <div class="flame" id="flame1"></div>
+                <div class="smoke" id="smoke1"></div>
+                <div class="wick"></div>
+                <div class="candle-stick candle-stick-1"></div>
+              </div>
+              <div class="candle" data-candle="2">
+                <div class="flame" id="flame2"></div>
+                <div class="smoke" id="smoke2"></div>
+                <div class="wick"></div>
+                <div class="candle-stick candle-stick-2"></div>
+              </div>
+              <div class="candle" data-candle="3">
+                <div class="flame" id="flame3"></div>
+                <div class="smoke" id="smoke3"></div>
+                <div class="wick"></div>
+                <div class="candle-stick candle-stick-3"></div>
+              </div>
+            </div>
+
+            <!-- Cake Tier 1 (Top) -->
+            <div class="cake-tier tier-top">
+              <div class="frosting-drips">
+                <span class="drip d1"></span>
+                <span class="drip d2"></span>
+                <span class="drip d3"></span>
+                <span class="drip d4"></span>
+                <span class="drip d5"></span>
+              </div>
+              <div class="sugar-flower sf1">🌸</div>
+              <div class="sugar-pearl sp1">✧</div>
+              <div class="sugar-pearl sp2">✧</div>
+            </div>
+
+            <!-- Cake Tier 2 (Middle) -->
+            <div class="cake-tier tier-mid">
+              <div class="frosting-ribbon"></div>
+              <div class="sugar-flower sf2">🌸</div>
+              <div class="sugar-flower sf3">🌸</div>
+              <div class="silver-pearls">
+                <span>•</span><span>•</span><span>•</span><span>•</span><span>•</span>
+              </div>
+            </div>
+
+            <!-- Cake Tier 3 (Base) -->
+            <div class="cake-tier tier-base">
+              <div class="frosting-bottom-swirls"></div>
+              <div class="tier-accent-line"></div>
+            </div>
+
+            <!-- Cake Stand / Silver Plate -->
+            <div class="cake-plate"></div>
+          </div>
+
+          <!-- Blow the Candles Action Button -->
+          <div class="cake-action-wrapper">
+            <button class="blow-candle-btn" id="blowCandlesBtn">
+              <span class="blow-icon">🎂</span>
+              <span class="blow-text">BLOW THE CANDLES</span>
+              <span class="blow-sparkle">✨</span>
+            </button>
+          </div>
+
+          <!-- Wish Fulfilled Reveal Banner -->
+          <div class="wish-reveal-box" id="wishRevealBox" style="display: none;">
+            <div class="wish-inner glass-panel">
+              <div class="celestial-stars-burst">🌟 ✦ 💫 ✦ 🌟</div>
+              <h3 class="wish-success-title">YOUR WISH IS ON ITS WAY ✨</h3>
+              <p class="wish-success-sub">Make a wish and keep believing.</p>
+              
+              <!-- Personal Wish Sender Box -->
+              <div class="wish-input-wrapper">
+                <input type="text" class="wish-input" id="wishInput" placeholder="Whisper your wish to the stars..." maxlength="120">
+                <button class="send-wish-btn" id="sendWishBtn">
+                  <span>Send to the Stars 🌙</span>
+                </button>
+              </div>
+              <div class="wish-sent-msg" id="wishSentMsg" style="display: none;">
+                ✨ Your wish has been etched into the constellation! ✨
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. CLOSING EXPERIENCE SECTION -->
+    <section class="section closing-section" id="closing-section">
+      <div class="section-container text-center">
+
+        <div class="closing-glow-halo"></div>
+
+        <span class="closing-mini-badge">💜 CELEBRATING YOU ALWAYS 💜</span>
+        
+        <h2 class="closing-headline glow-title">HAPPY BIRTHDAY, MUNIZA! 💜</h2>
+        
+        <p class="closing-quote">
+          Keep smiling. Keep shining. Keep being you.
+        </p>
+
+        <!-- Close Surprise Button (Cinematic Reverse Animation) -->
+        <div class="close-surprise-wrapper">
+          <button class="close-surprise-btn" id="closeSurpriseBtn">
+            <span class="close-gift-icon">🎁</span>
+            <span class="close-btn-text">CLOSE THE SURPRISE</span>
+            <div class="close-btn-glow"></div>
+          </button>
+        </div>
+
+        <p class="close-tip">You can reopen your magical birthday surprise anytime.</p>
+
+      </div>
+    </section>
+
+    <!-- Minimal Aesthetic Footer -->
+    <footer class="celebration-footer">
+      <div class="footer-content">
+        <p class="footer-text">
+          Crafted with starlight, violet hues, and affection for <strong>Muniza Shaheen</strong> ✨
+        </p>
+        <p class="footer-sub">24 November 2006 • A Dreamy Midnight Celebration</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- LIGHTBOX MODAL FOR MEMORY GALLERY                         -->
+  <!-- ========================================================= -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content glass-panel">
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close photo preview">✕</button>
+      
+      <div class="lightbox-media-wrapper">
+        <img src="" alt="Memory Preview" id="lightboxImg" class="lightbox-img">
+      </div>
+
+      <div class="lightbox-details">
+        <h3 class="lightbox-title" id="lightboxTitle"></h3>
+        <p class="lightbox-subtitle" id="lightboxSubtitle"></p>
+        <div class="lightbox-counter" id="lightboxCounter">1 / 9</div>
+      </div>
+
+      <button class="lightbox-nav-btn prev-btn" id="lightboxPrevBtn" aria-label="Previous photo">❮</button>
+      <button class="lightbox-nav-btn next-btn" id="lightboxNextBtn" aria-label="Next photo">❯</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

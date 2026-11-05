@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad_memory-5.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#240046" />
+      <stop offset="50%" stop-color="#5A189A" />
+      <stop offset="100%" stop-color="#080314" />
+    </linearGradient>
+    <radialGradient id="halo_memory-5.svg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D8B4E2" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#5A189A" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="450" rx="24" fill="url(#bgGrad_memory-5.svg)" />
+  
+  <!-- Subtle Constellation Lines -->
+  <circle cx="300" cy="215" r="160" fill="none" stroke="#D8B4E2" stroke-width="1.2" stroke-dasharray="4,8" opacity="0.25" />
+  <circle cx="300" cy="215" r="110" fill="none" stroke="#FFB6D9" stroke-width="1" stroke-dasharray="2,6" opacity="0.3" />
+  
+  <!-- Central Soft Halo -->
+  <circle cx="300" cy="215" r="115" fill="url(#halo_memory-5.svg)" />
+
+  <!-- Symbol Graphic -->
+  
+        <g filter="url(#glow)">
+          <ellipse cx="300" cy="165" rx="26" ry="42" fill="#C8B6FF" opacity="0.9" />
+          <ellipse cx="300" cy="255" rx="26" ry="42" fill="#C8B6FF" opacity="0.9" />
+          <ellipse cx="255" cy="210" rx="42" ry="26" fill="#C8B6FF" opacity="0.9" />
+          <ellipse cx="345" cy="210" rx="42" ry="26" fill="#C8B6FF" opacity="0.9" />
+          <circle cx="300" cy="210" r="22" fill="#FFD166" />
+        </g>
+      
+
+  <!-- Label Badge -->
+  <rect x="80" y="360" width="440" height="60" rx="18" fill="#0D061A" fill-opacity="0.75" stroke="#D8B4E2" stroke-width="1" stroke-opacity="0.35" />
+  <text x="300" y="386" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', serif" font-weight="700" font-size="16" fill="#FFFFFF" letter-spacing="3">LAVENDER BLOSSOM</text>
+  <text x="300" y="406" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="300" font-size="12" fill="#D8B4E2" letter-spacing="0.8">Elegance, charm and gentle warmth</text>
+</svg>

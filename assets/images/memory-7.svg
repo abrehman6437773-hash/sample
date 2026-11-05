@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad_memory-7.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22083A" />
+      <stop offset="50%" stop-color="#6A0572" />
+      <stop offset="100%" stop-color="#080314" />
+    </linearGradient>
+    <radialGradient id="halo_memory-7.svg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFDFBA" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#6A0572" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="450" rx="24" fill="url(#bgGrad_memory-7.svg)" />
+  
+  <!-- Subtle Constellation Lines -->
+  <circle cx="300" cy="215" r="160" fill="none" stroke="#FFDFBA" stroke-width="1.2" stroke-dasharray="4,8" opacity="0.25" />
+  <circle cx="300" cy="215" r="110" fill="none" stroke="#FFB6D9" stroke-width="1" stroke-dasharray="2,6" opacity="0.3" />
+  
+  <!-- Central Soft Halo -->
+  <circle cx="300" cy="215" r="115" fill="url(#halo_memory-7.svg)" />
+
+  <!-- Symbol Graphic -->
+  
+        <polygon points="300,120 312,190 380,200 312,210 300,280 288,210 220,200 288,190" fill="#FDE2E4" filter="url(#glow)" />
+        <polygon points="390,240 396,260 415,265 396,270 390,290 384,270 365,265 384,260" fill="#FFB6D9" filter="url(#glow)" />
+        <polygon points="210,140 215,155 230,160 215,165 210,180 205,165 190,160 205,155" fill="#C8B6FF" filter="url(#glow)" />
+      
+
+  <!-- Label Badge -->
+  <rect x="80" y="360" width="440" height="60" rx="18" fill="#0D061A" fill-opacity="0.75" stroke="#FFDFBA" stroke-width="1" stroke-opacity="0.35" />
+  <text x="300" y="386" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', serif" font-weight="700" font-size="16" fill="#FFFFFF" letter-spacing="3">GOLDEN AURA</text>
+  <text x="300" y="406" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="300" font-size="12" fill="#D8B4E2" letter-spacing="0.8">Luminous spirit and graceful heart</text>
+</svg>

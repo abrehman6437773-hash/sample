@@ -1,0 +1,24 @@
+{
+  "name": "dreamy-midnight-birthday",
+  "version": "1.0.0",
+  "description": "A premium, full-screen interactive birthday celebration web application for Muniza Shaheen",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "birthday",
+    "celebration",
+    "interactive",
+    "animation",
+    "canvas",
+    "3d-gift-box",
+    "midnight-purple"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
